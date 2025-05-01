@@ -1,0 +1,35 @@
+<div class="container" *ngFor="let content of Lesson.Content">
+    <h4>{{content.STitle}}</h4>
+    <div [innerHTML]="sanitize(content.Section)"></div>
+    <div *ngIf="content.Animation">
+        <div *ngIf="content.AnimationNo == 1">
+            <app-animation1-1></app-animation1-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 2">
+            <app-animation2-2></app-animation2-2>
+        </div>
+        <div *ngIf="content.AnimationNo == 3">
+            <app-animation3-1></app-animation3-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 4">
+            <app-animation4-1></app-animation4-1>
+        </div>
+    </div>
+    <div *ngIf="content.Exercise">
+        <h4>Exercise {{content.ExerciseNo}}</h4>
+        <div *ngFor="let exercise of Lesson.Exercises">
+            <div *ngIf="content.ExerciseNo == exercise.ExerciseNo">
+                <div *ngIf="exercise.ExerciseType === 'Match'">
+                    <div [innerHTML]="sanitize(exercise.ExerciseQ)"></div>
+                    <div *ngFor="let option of exercise.AnswerOptions">
+                        <div [innerHTML]="sanitize(option)"></div><br>
+                    </div>
+                </div>
+                <div [innerHTML]="sanitize(exercise.ExerciseQ)"></div><br>
+                <label>Answer: </label>
+                <input type="text" [(ngModel)]="answer">
+            </div>
+        </div>
+    </div>
+</div>
+

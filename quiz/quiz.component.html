@@ -1,0 +1,16 @@
+<div class="questionbox" *ngFor="let question of Quiz.Questions; let i = index">
+    <h3>Question {{i + 1}}</h3>
+    <div [innerHTML]="question.Instructions"></div><br>
+    <div *ngIf="question.QType === 'MC'">
+        <div style="display: flex" *ngFor="let option of question.Options; let i2 = index">
+            <input type="checkbox" (change)="setans($event, option, i)">
+            <div [innerHTML]="sanitize(option)"></div><br>
+        </div> 
+    </div>
+    <div *ngIf="question.QType === 'Calculation'">
+        <label>Answer: </label>
+        <input type="text" [(ngModel)]="subans[i]">
+    </div>
+    <button (click)="Markanswer(question.CorrectAns, i)">Submit</button>
+</div>
+<button (click)="results()">Complete Quiz</button>

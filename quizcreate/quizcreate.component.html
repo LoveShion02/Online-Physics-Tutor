@@ -1,0 +1,35 @@
+<form [formGroup]="quizform" (ngSubmit)="Submit()">
+    <div formArrayName="Questions">
+        <div *ngFor="let question of questions.controls; let i = index" [formGroupName]="i">
+            <h3>Question {{i + 1}}</h3>
+            <label>Multiple Choice: </label>
+            <input type="checkbox" (change)="setMC($event, i)">
+            <label>Calculation based: </label>
+            <input type="checkbox" (change)="setCalc($event, i)"><br>
+            <label>Question Instructions:</label>
+            <textarea formControlName="Instructions"></textarea><br>
+            <div *ngIf="question.get('QType')?.value === 'MC'">
+                <div formArrayName="Options">
+                    <div *ngFor="let option of getoptions(i).controls; let i2 = index">
+                        <h3>Option {{i2 + 1}}</h3>
+                        <textarea [formControlName]="i2" placeholder="Option"></textarea>
+                    </div>
+                </div>
+                <button type="button" (click)="addoption(i)">Add Option</button>
+            </div>
+            <label>Answer:</label>
+            <textarea formControlName="CorrectAns"></textarea>
+            <label>Hints:</label>
+            <div formArrayName="Hints">
+                <div *ngFor="let hint of gethints(i).controls; let i3 = index">
+                    <h3>Hint {{i3 + 1}}</h3>
+                    <textarea [formControlName]="i3" placeholder="Hint"></textarea>
+                </div>
+            </div>
+            <button (click)="addhint(i)">Add Hint</button>
+        </div>
+    </div>
+    <button type="button" (click)="addquestion()">Add question</button>
+    <button>Submit</button>
+</form>
+

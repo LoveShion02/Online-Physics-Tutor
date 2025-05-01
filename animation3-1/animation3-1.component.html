@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="projectile" #projectile></div>
+    <div class="line"></div>
+</div>
+<label>Initial Velocity: </label>
+<input type="range" min="0" max="100" step="1" [(ngModel)]="v"><br>
+<label>Angle of projection: </label>
+<input type="range" min="0" max="90" step="1" [(ngModel)]="th"> <br>
+<label>Initial Height: </label>
+<input type="range" min="0" max="200" step="1" [(ngModel)]="h"> <br>
+<button (click)="launch()">Launch</button>
+

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="pendulum" #pendulum>
+        <div class="string" #string></div>
+        <div class="bob" #bob></div>
+    </div>
+    <div class="controls">
+        <button (click)="calculate()">Spin</button>
+        <label>Radius: </label>
+        <input type="range" min="50" max="200" step="10" [(ngModel)]="r">
+        <label>Mass: </label>
+        <input type="range" min="1" max="5" step="0.5" [(ngModel)]="m">
+    </div>
+    
+</div>
+

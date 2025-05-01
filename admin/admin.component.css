@@ -1,0 +1,62 @@
+.container {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    align-content: top;
+}
+
+.heading {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF4B7;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.headingblock {
+    width: 1800px;
+    height: 70px;
+    background-color: #000B58;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF4B7;
+    align-content: top;
+    overflow: hidden;
+
+}
+
+.titleblocks {
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.title {
+    width: 120px;
+    height: 20px;
+    border: 2px solid;
+    display: inline-block;
+}
+
+.sectionblock {
+    width: 800px;
+    height: 500px;
+}
+
+.Descriptionblock {
+    width: 600px;
+    height: 200px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+.distance {
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+}

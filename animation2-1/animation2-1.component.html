@@ -1,0 +1,15 @@
+<div class="container">
+    <svg height="300px" width="100%">
+        <path #zigzagPath id="zigzagPath" 
+              d="M30,200 L130,250 L230,150 L330,250 L430,150 L530,250 L630,150"
+              stroke=transparent fill="none" stroke-width="2"/>
+        <path #straightpath id="straightpath" 
+              d="M30,200 L630,150"
+              stroke=transparent fill="none" stroke-width="2"/>
+    </svg>
+    <div class="block" #character></div>
+</div>
+<button class="button" (click)="moveObject()">Move Object</button>
+<button class="button" (click)="distance()">Distance</button>
+<button class="button" (click)="displacement()">Displacement</button>
+<button class="button" (click)="reset()">Reset</button>

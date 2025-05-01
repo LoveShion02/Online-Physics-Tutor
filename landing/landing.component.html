@@ -1,0 +1,16 @@
+<div class="headingblock">
+    <b>Online Physics Tutor</b>
+    <button style="position:absolute; right: 50px;" (click)="login()"><b>Login</b></button>
+</div>
+<div class="displayblock">
+    <div class="lessonblock" *ngFor="let lesson of Lessons">
+        <div class="titleblock">
+            <b>{{lesson.Title}}</b>
+        </div>
+        <div class="descriptionblock">
+            {{lesson.Description}}
+        </div>
+        <button style="position: absolute; left: 100px; bottom: 50px; width: 100px;" (click)="startlesson(lesson._id)">Start Lesson</button>
+    </div>
+</div>
+

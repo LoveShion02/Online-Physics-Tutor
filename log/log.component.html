@@ -1,0 +1,18 @@
+
+<div class="card">
+    <h1>Login</h1>
+    <form [formGroup]="logpage" (ngSubmit)="Login()">                   
+        <label>Email</label> <br>
+        <input type="email" formControlName="Email" placeholder="Enter your email"> <br><br>
+        <label>Password</label> <br>
+        <input type="password" formControlName="Password" placeholder="Enter your password"> <br><br>
+        <label>Are you a student or an admin?</label><br>
+        <label>Student: <input type="radio" (click)="setstudent()"></label>
+        <label>Admin: <input type="radio" (click)="setadmin()"></label>
+        <button>Login</button>
+        <span>You don't have an account? <a routerLink="/register">Sign up</a></span>
+    </form>
+</div>
+
+
+

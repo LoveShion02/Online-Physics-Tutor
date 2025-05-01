@@ -1,0 +1,16 @@
+<div class="card">
+    <h4>Register</h4>
+    <form class="registrationblock" [formGroup]="regpage" (ngSubmit)="Register()">
+        <label>Name</label> <br>
+        <input type="text" formControlName="Name" placeholder="Enter your name"> <br><br>
+        <label>Email</label> <br>
+        <input type="email" formControlName="Email" placeholder="Enter your email"> <br><br>
+        <label>Password</label> <br>
+        <input type="password" formControlName="Password" placeholder="Enter your password"> <br><br>
+        <label>Student or Admin?</label> <br>
+        <input type="text" formControlName="UserType" placeholder="Enter your User type"> <br><br>
+        <button>Register</button>
+        <span>Already have an account? <a routerLink="/login">Sign up</a></span>
+    </form>
+</div>
+

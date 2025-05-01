@@ -1,0 +1,81 @@
+
+.titleblock {
+    width: 100%;
+    height: 75px;
+    background-color: #000B58;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    align-content: center;
+    text-align: center;
+    position: fixed;
+}
+
+.exerciseblock {
+    padding: 1%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    width: 40%;
+}
+
+.animationblock {
+    padding: 1%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.content {
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 200px;
+    margin-top: 100px;
+    line-height: 2;
+}
+
+button {
+    padding: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid black;
+}
+
+.heading {
+    color: #006A67;
+}
+
+.menu {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.menutitles {
+    padding: 15px 20px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+.menutitles:hover {
+    background-color: #003161;
+}
+
+.menutitles.active {
+    background-color: #003161;
+}
+
+.homebutton {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    padding: 1%;
+    border-radius: 10px;
+}

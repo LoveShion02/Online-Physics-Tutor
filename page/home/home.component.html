@@ -1,0 +1,22 @@
+<div class="headingblock">
+    <b>Select a Lesson</b>
+    <button style="right: 50px; top: 20px;" (click)="logout()">Logout</button><br>
+</div>
+<div class="container">
+    <div class="lessonblock" *ngFor="let lesson of lessons; let i = index">
+        <div class="Titleblock">
+            <h4 class="Title">{{lesson.Title}}</h4>
+        </div>
+        <div *ngFor="let s of status">
+            <div *ngIf="s.LessonNo == lesson.LessonNo">
+                <div *ngIf="s.complete == 1">
+                    <div>Lesson Completed!</div>
+                    <div>Score: {{s.result}}%</div>
+                </div>
+            </div>
+        </div>
+        <p class="Description">{{lesson.Description}}</p>
+        <button (click)="startlesson(lesson._id)">Start Lesson</button>
+    </div>
+</div>
+

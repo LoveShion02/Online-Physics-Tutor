@@ -1,0 +1,167 @@
+.container {
+    position: relative;
+    height: 200px;
+}
+.block {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    position: absolute;
+    top: 45px;
+    left: 154px;
+}
+
+.springcase {
+    height: 15px;
+    width: 100px;
+}
+
+.springpiece1 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.springpiece2 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 67px;
+
+}
+
+.springpiece3 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 67px;
+}
+
+.springpiece4 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 84px;
+
+}
+
+.springpiece5 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 84px;
+}
+
+.springpiece6 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 101px;
+
+}
+
+.springpiece7 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 101px;
+}
+
+.springpiece8 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 118px;
+
+}
+
+.springpiece9 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 118px;
+}
+
+.springpiece10 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 135px;
+
+}
+
+.springpiece11 {
+    height: 25px;
+    width: 3px;
+    transform: rotate(20deg);
+    border-radius: 1px;
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 135px;
+}
+
+.springpiece12 {
+    height: 25px;
+    width: 3px;
+    border-radius: 1px;
+    transform: rotate(-20deg);
+    transform-origin: bottom center;
+    background-color: grey;
+    position: absolute;
+    top: 50px;
+    left: 152px;
+
+}

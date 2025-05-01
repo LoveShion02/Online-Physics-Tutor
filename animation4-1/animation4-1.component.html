@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="block1" #block1></div>
+    <div class="block2" #block2></div>
+    <div class="controls">
+        <label>Mass: <input type="range" min="10" max="50" step="5" [(ngModel)]="m1"></label>
+        <label>Acceleration: <input type="range" min="10" max="100" step="10" [(ngModel)]="a1"></label>
+    </div>
+    <button (click)="calculate()">Launch</button>
+    <button (click)="reset()">Reset</button>
+</div>

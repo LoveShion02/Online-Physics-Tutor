@@ -1,0 +1,91 @@
+<div class="menu">
+    <div style="font-family: Arial, Helvetica, sans-serif; font-size: larger; padding: 15px 20px; color: #006A67"><b>Menu</b></div>
+    <div *ngFor="let content of lesson.Content" [attr.data-id]="content._id" class="menutitles" #menutitles>{{content.STitle}}</div>
+</div>
+<div class="titleblock">
+    {{lesson.Title}}
+    <button class="homebutton" (click)="returnhome()">Return Home</button>
+</div>
+<div class="content" *ngFor="let content of lesson.Content" [id]="content._id" #content>
+    <h4 class="heading">{{content.STitle}}</h4>
+    <div [innerHTML]="sanitize(content.Section)"></div>
+    <div class="animationblock" *ngIf="content.Animation">
+        <div *ngIf="content.AnimationNo == 1">
+            <app-animation1-1></app-animation1-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 2">
+            <app-animation2-2></app-animation2-2>
+        </div>
+        <div *ngIf="content.AnimationNo == 3">
+            <app-animation3-1></app-animation3-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 4">
+            <app-animation4-1></app-animation4-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 5">
+            <app-animation5-1></app-animation5-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 6">
+            <app-animation6-1></app-animation6-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 7">
+            <app-animation7-1></app-animation7-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 8">
+            <app-animation8-1></app-animation8-1>
+        </div>
+        <div *ngIf="content.AnimationNo == 9">
+            <app-animation8-2></app-animation8-2>
+        </div>
+    </div> <br>
+    <div *ngIf="content.Exercise">
+        <div class="exerciseblock">
+            <h4>Exercise {{content.ExerciseNo}}</h4>
+            <div *ngFor="let exercise of lesson.Exercises; let in = index">
+                <div *ngIf="content.ExerciseNo == exercise.ExerciseNo">
+                    <div [innerHTML]="sanitize(exercise.ExerciseQ)"></div> <br>
+                    <div *ngIf="exercise.ExerciseType == 'MC'">
+                        <div style="display: flex" *ngFor="let option of exercise.AnswerOptions">
+                            <input type="checkbox" (change)="setAnswer(option)">
+                            <div [innerHTML]="sanitize(option)"></div>
+                        </div>
+                        <div *ngIf="isansm">
+                            <div *ngIf="correctm">Correct!</div>
+                            <div *ngIf="!correctm">Sorry! Try Again!</div>
+                        </div>
+                        <button (click)="markanswerm(exercise.ExerciseA, in)">Submit</button>
+                    </div>
+                    <div *ngIf="exercise.ExerciseType == 'Match'">
+                        <div *ngFor="let option of exercise.AnswerOptions; let i = index">
+                            <div [innerHTML]="sanitize(option)"></div>
+                            <select [(ngModel)]="selectedoption[i]">
+                                <option *ngFor="let answer of exercise.AnswerArray" [value]="answer">{{answer}}</option>
+                            </select>
+                        </div>
+                        <button (click)="markmatches(in)">Submit</button>
+                        <div *ngIf="result">
+                            <div *ngIf="itemno == in">
+                                <div>Result: {{score}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="exercise.ExerciseType == 'Calculation'">
+                        <input type="text" [(ngModel)]="answer" placeholder="Answer">
+                        <button (click)="markanswer(exercise.ExerciseA, in)">Submit</button>
+                        <div *ngIf="isansc">
+                            <div *ngIf="correct">Correct!</div>
+                            <div *ngIf="!correct">Sorry! Try Again!</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <button (click)="attemptquiz()">Attempt Quiz</button>
+</div>
+
+
+

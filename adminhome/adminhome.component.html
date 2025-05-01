@@ -1,0 +1,13 @@
+<button (click)="createlesson()"><b>Create New Lesson</b></button> <br><br>
+<button style="position: absolute; top: 10px; right: 20px;" (click)="logout()">Logout</button>
+<div class="container">
+    <div class="lessonblock" *ngFor=" let lesson of Lessons">
+        <div class="headingblock"><br>{{lesson.Title}}</div>
+        <div class="descriptionblock"><br>{{lesson.Description}}<br>
+            <button (click)="editlesson(lesson._id)"><b>Edit Lesson</b></button> <br>
+            <button (click)="createquiz(lesson._id)"><b>Create Quiz</b></button> <br>
+            <button (click)="deletelesson(lesson._id)"><b>Delete Lesson</b></button>
+        </div>
+        
+    </div>
+</div>

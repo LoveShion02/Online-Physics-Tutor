@@ -1,0 +1,57 @@
+.headingblock {
+    background-color: #000B58;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    align-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    color: white
+}
+
+button {
+    width: 75px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.displayblock {
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.lessonblock {
+    border: 2px solid black;
+    width: 300px;
+    height: 400px;
+    border-radius: 5%;
+    background-color: #006A67;
+    overflow: hidden;
+    position: relative;
+}
+
+.titleblock {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    align-content: center;
+    text-align: center;
+}
+
+.descriptionblock {
+    padding: 10%;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}

@@ -1,0 +1,78 @@
+<div class="headingblock">
+    <h1>Create your Lesson</h1>
+</div> <br><br><br><br>
+
+
+    <form [formGroup]="lessongroup" (ngSubmit)="submit()">
+        <label>Lesson Number: </label>
+        <input class="title" type="number" formControlName="LessonNo" placeholder="Lesson Number"> <br><br>
+        <label>Lesson Title: </label>
+        <input class="title" type="text" formControlName="Title" placeholder="Title"> <br><br>
+        <label>Description: </label> <br>
+        <textarea class="Descriptionblock" formControlName="Description" placeholder="Description"></textarea> <br><br>
+        <div formArrayName="Content">
+            <div class="container" *ngFor="let section of content.controls; let i = index" [formGroupName]="i">
+                <label>Content: </label><br>
+                <label>Section Title</label>
+                <input class="title" type="text" formControlName="STitle"><br><br>
+                <label>Section Content:</label><br>
+                <textarea class="sectionblock" formControlName="Section"></textarea> <br><br>
+                <label>Is there an animation?</label>
+                <input type="checkbox" formControlName="Animation">
+                <label>Animation Number:</label>
+                <input class="title" type="number" formControlName="AnimationNo"><br><br>
+                <label>Is there an exercise?</label>
+                <input type="checkbox" formControlName="Exercise">
+                <label>Exercise Number:</label>
+                <input class="title" type="number" formControlName="ExerciseNo"><br><br>
+            </div>
+        </div>
+        <button type="button" (click)="addsection()">Add Section</button>
+        <div formArrayName="Exercises">
+            <div *ngFor="let exercise of exercises.controls; let i = index" [formGroupName]="i">
+                <label>Exercises:</label>
+                <label>Question number:</label>
+                <input type="number" formControlName="ExerciseNo">
+                <label>Exercise Type:</label><br>
+                <label>Multiple Choice</label>
+                <input type="checkbox" formControlName="MC" (change)="setMC($event, i)">
+                <label>Matching Definitions</label>
+                <input type="checkbox" formControlName="Match" (change)="setMatch($event, i)">
+                <label>Calculation-based</label>
+                <input type="checkbox" formControlName="Calculation" (change)="setcalc($event, i)"> <br>
+                <label>Question:</label>
+                <textarea formControlName="ExerciseQ"></textarea>
+                <div *ngIf="exercise.get('ExerciseType')?.value === 'MC'">
+                    <div formArrayName="AnswerOptions">
+                        <div *ngFor="let option of getoptions(i).controls; let i2 = index">
+                            <textarea [formControlName]="i2" placeholder="Option"></textarea>
+                        </div>
+                        <button type="button" (click)="addoption(i)">Add Option</button>
+                    </div>
+                    <input type="text" formControlName="ExerciseA">
+                </div>
+                <div *ngIf="exercise.get('ExerciseType')?.value === 'matching'">
+                    <div formArrayName="AnswerOptions">
+                        <div *ngFor="let option of getoptions(i).controls; let i2 = index">
+                            <textarea [formControlName]="i2" placeholder="Option"></textarea>
+                        </div>
+                    </div>
+                    <div formArrayName="AnswerArray">
+                        <div *ngFor="let answer of getanswers(i).controls; let i3 = index">
+                            <input [formControlName]="i3" placeholder="Answer">
+                        </div>
+                    </div>
+                    <button type="button" (click)="addpair(i)">Add Pair</button>
+                </div>
+                <div *ngIf="exercise.get('ExerciseType')?.value === 'calculation'">
+                    <label>Answer:</label>
+                    <input type="text" formControlName="ExerciseA">
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="addexercise()">Add Exercise</button>
+        <button>Submit</button>
+    </form>
+
+
+

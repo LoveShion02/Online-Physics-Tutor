@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    height: 400px;
+}
+.straightball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+}
+
+.circleball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+    position: absolute;
+    left: 0px;
+}
+
+.cballcase {
+    width: 155px;
+    height: 10px;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    transform-origin: right;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid black;
+    top: 54px;
+    left: 304px;
+}
+
+.line {
+    height: 1px;
+    width: 300px;
+    position: absolute;
+    background-color: black;
+    top: 205px;
+    left: 305px;
+}
